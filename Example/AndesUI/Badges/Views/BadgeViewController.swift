@@ -99,28 +99,28 @@ class BadgeViewController: UIViewController, BadgeView {
 extension BadgeViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView {
-            case modifierPicker:
-                modifierField.resignFirstResponder()
-                self.modifier = AndesBadgeModifier.init(rawValue: row)!
-                modifierField.text = modifier.toString()
-            case hierarchyPicker:
-                hierarchyField.resignFirstResponder()
-                self.hierarchy = AndesBadgeHierarchy.init(rawValue: row)!
-                hierarchyField.text = hierarchy.toString()
-            case typePicker:
-                typeField.resignFirstResponder()
-                self.type = AndesBadgeType.init(rawValue: row)!
-                typeField.text = type.toString()
-            case sizePicker:
-                sizeField.resignFirstResponder()
-                self.size = AndesBadgeSize.init(rawValue: row)!
-                sizeField.text = size.toString()
-            case borderPicker:
-                borderField.resignFirstResponder()
-                self.border = AndesBadgeBorder.init(rawValue: row)!
-                borderField.text = border.toString()
-            default:
-                return
+        case modifierPicker:
+            modifierField.resignFirstResponder()
+            self.modifier = AndesBadgeModifier.init(rawValue: row)!
+            modifierField.text = modifier.toString()
+        case hierarchyPicker:
+            hierarchyField.resignFirstResponder()
+            self.hierarchy = AndesBadgeHierarchy.init(rawValue: row)!
+            hierarchyField.text = hierarchy.toString()
+        case typePicker:
+            typeField.resignFirstResponder()
+            self.type = AndesBadgeType.init(rawValue: row)!
+            typeField.text = type.toString()
+        case sizePicker:
+            sizeField.resignFirstResponder()
+            self.size = AndesBadgeSize.init(rawValue: row)!
+            sizeField.text = size.toString()
+        case borderPicker:
+            borderField.resignFirstResponder()
+            self.border = AndesBadgeBorder.init(rawValue: row)!
+            borderField.text = border.toString()
+        default:
+            return
         }
     }
 }
@@ -132,35 +132,35 @@ extension BadgeViewController: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView {
-            case modifierPicker:
-                return 1
-            case hierarchyPicker:
-                return 2
-            case typePicker:
-                return 5
-            case sizePicker:
-                return 2
-            case borderPicker:
-                return 3
-            default:
-                return 0
+        case modifierPicker:
+            return 1
+        case hierarchyPicker:
+            return 2
+        case typePicker:
+            return 5
+        case sizePicker:
+            return 2
+        case borderPicker:
+            return 3
+        default:
+            return 0
         }
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
-            case modifierPicker:
-                return AndesBadgeModifier.init(rawValue: row)!.toString()
-            case hierarchyPicker:
-                return AndesBadgeHierarchy.init(rawValue: row)!.toString()
-            case typePicker:
-                return AndesBadgeType.init(rawValue: row)!.toString()
-            case sizePicker:
-                return AndesBadgeSize.init(rawValue: row)!.toString()
-            case borderPicker:
-                return AndesBadgeBorder.init(rawValue: row)!.toString()
-            default:
-                return ""
+        case modifierPicker:
+            return AndesBadgeModifier.init(rawValue: row)!.toString()
+        case hierarchyPicker:
+            return AndesBadgeHierarchy.init(rawValue: row)!.toString()
+        case typePicker:
+            return AndesBadgeType.init(rawValue: row)!.toString()
+        case sizePicker:
+            return AndesBadgeSize.init(rawValue: row)!.toString()
+        case borderPicker:
+            return AndesBadgeBorder.init(rawValue: row)!.toString()
+        default:
+            return ""
         }
     }
 }
@@ -168,12 +168,8 @@ extension BadgeViewController: UIPickerViewDataSource {
 extension AndesBadgeModifier {
     func toString() -> String {
         switch self {
-            case .pill:
-                return "Pill"
-//            case .dot:
-//                return "Dot"
-//            case .notification:
-//                return "Notification"
+        case .pill:
+            return "Pill"
         }
     }
 }
@@ -181,10 +177,10 @@ extension AndesBadgeModifier {
 extension AndesBadgeHierarchy {
     func toString() -> String {
         switch self {
-            case .loud:
-                return "Loud"
-            case .quiet:
-                return "Quiet"
+        case .loud:
+            return "Loud"
+        case .quiet:
+            return "Quiet"
         }
     }
 }
@@ -192,16 +188,16 @@ extension AndesBadgeHierarchy {
 extension AndesBadgeType {
     func toString() -> String {
         switch self {
-            case .neutral:
-                return "Neutral"
-            case .success:
-                return "Success"
-            case .error:
-                return "Error"
-            case .warning:
-                return "Warning"
-            case .highlight:
-                return "Highlight"
+        case .neutral:
+            return "Neutral"
+        case .success:
+            return "Success"
+        case .error:
+            return "Error"
+        case .warning:
+            return "Warning"
+        case .highlight:
+            return "Highlight"
         }
     }
 }
@@ -209,10 +205,10 @@ extension AndesBadgeType {
 extension AndesBadgeSize {
     func toString() -> String {
         switch self {
-            case .large:
-                return "Large"
-            case .small:
-                return "Small"
+        case .large:
+            return "Large"
+        case .small:
+            return "Small"
         }
     }
 }
@@ -220,12 +216,12 @@ extension AndesBadgeSize {
 extension AndesBadgeBorder {
     func toString() -> String {
         switch self {
-            case .standard:
-                return "Standard"
-            case .corner:
-                return "Corner"
-            case .rounded:
-                return "Rounded"
+        case .standard:
+            return "Standard"
+        case .corner:
+            return "Corner"
+        case .rounded:
+            return "Rounded"
         }
     }
 }

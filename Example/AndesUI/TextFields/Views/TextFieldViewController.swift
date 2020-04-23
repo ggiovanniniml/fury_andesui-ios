@@ -189,7 +189,7 @@ extension TextFieldViewController: UIPickerViewDataSource {
 extension TextFieldViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
-                    replacementString string: String)
+                   replacementString string: String)
           -> Bool {
         let allowedCharacters = CharacterSet.decimalDigits
         let characterSet = CharacterSet(charactersIn: string)

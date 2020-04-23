@@ -80,7 +80,7 @@ import UIKit
     }
 
     private func updateContentView() {
-        let config = AndesMessageViewConfigFactory.provideConfig(hierarchy: self.hierarchy, type: self.type, title: self.title, body: self.body, isDismissable: self.isDismissable, primaryActionText: self.primaryActionText, secondaryActionText: self.secondaryActionText)
+        let config = AndesMessageViewConfigFactory.provideConfig(for: self)
         contentView.update(withConfig: config)
     }
 
@@ -154,7 +154,7 @@ import UIKit
 
     /// Should return a view depending on which message variant is selected
     private func provideView() -> AndesMessageView {
-        let config = AndesMessageViewConfigFactory.provideConfig(hierarchy: self.hierarchy, type: self.type, title: self.title, body: self.body, isDismissable: self.isDismissable, primaryActionText: self.primaryActionText, secondaryActionText: self.secondaryActionText)
+        let config = AndesMessageViewConfigFactory.provideConfig(for: self)
 
         if let pText = primaryActionText, !pText.isEmpty {
             return AndesMessageWithActionsView(withConfig: config)

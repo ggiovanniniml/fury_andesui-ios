@@ -104,12 +104,11 @@ import UIKit
     /// Should return a view depending on which Badge modifier is selected
     private func provideView() -> AndesBadgeView {
         let config = AndesBadgeViewConfigFactory.provideInternalConfig(from: self)
-
         switch self.modifier {
-            case .pill:
-                return AndesBadgeViewPill(withConfig: config)
-            default:
-                return AndesBadgeViewPill(withConfig: config)
+        case .pill:
+            return AndesBadgeViewPill(withConfig: config)
+        default:
+            return AndesBadgeViewPill(withConfig: config)
         }
     }
 }

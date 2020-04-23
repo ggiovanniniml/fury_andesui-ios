@@ -7,17 +7,17 @@
 
 import Foundation
 internal class AndesMessageViewConfigFactory {
-    static func provideConfig(hierarchy: AndesMessageHierarchy, type: AndesMessageType, title: String?, body: String, isDismissable: Bool, primaryActionText: String?, secondaryActionText: String?) -> AndesMessageViewConfig {
-        let typeIns = AndesMessageTypeFactory.provide(type)
-        let hierarchyIns = AndesMessageHierarchyFactory.provide(hierarchy, forType: typeIns)
+    static func provideConfig(for message: AndesMessage) -> AndesMessageViewConfig {
+        let typeIns = AndesMessageTypeFactory.provide(message.type)
+        let hierarchyIns = AndesMessageHierarchyFactory.provide(message.hierarchy, forType: typeIns)
 
-        var config = AndesMessageViewConfig(backgroundColor: hierarchyIns.backgroundColor, pipeColor: hierarchyIns.pipeColor, textColor: hierarchyIns.textColor, titleText: title, bodyText: body, icon: typeIns.icon, iconBackgroundColor: hierarchyIns.accentColor, isDismissable: isDismissable, dismissIconColor: hierarchyIns.textColor)
+        var config = AndesMessageViewConfig(backgroundColor: hierarchyIns.backgroundColor, pipeColor: hierarchyIns.pipeColor, textColor: hierarchyIns.textColor, titleText: message.title, bodyText: message.body, icon: typeIns.icon, iconBackgroundColor: hierarchyIns.accentColor, isDismissable: message.isDismissable, dismissIconColor: hierarchyIns.textColor)
 
-        if let primaryText = primaryActionText {
+        if let primaryText = message.primaryActionText {
             config.primaryActionConfig = AndesButtonViewConfigFactory.provide(hierarchy: hierarchyIns.primaryButtonHierarchy, size: AndesButtonSizeMedium(), text: primaryText, icon: nil)
         }
 
-        if let secondaryText = secondaryActionText {
+        if let secondaryText = message.secondaryActionText {
             config.secondaryActionConfig = AndesButtonViewConfigFactory.provide(hierarchy: hierarchyIns.secondaryButtonHierarchy, size: AndesButtonSizeMedium(), text: secondaryText, icon: nil)
         }
 

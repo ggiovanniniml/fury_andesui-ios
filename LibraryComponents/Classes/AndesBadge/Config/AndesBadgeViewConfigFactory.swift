@@ -18,11 +18,6 @@ internal class AndesBadgeViewConfigFactory {
             config = AndesBadgeViewConfig(backgroundColor: hierarchyIns.backgroundColor, text: pillText, size: badge.size, textColor: hierarchyIns.textColor, border: badge.border)
         }
 
-//        TODO: uncomment when Notification modifier is implemented
-//        if badge.modifier == .notification {
-//            config = AndesBadgeViewConfig(backgroundColor: hierarchyIns.backgroundColor, size: badge.size, icon: typeIns.icon!, iconBackgroundColor: hierarchyIns.backgroundColor)
-//        }
-
         return config
     }
 }
