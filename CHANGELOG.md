@@ -4,6 +4,7 @@
 - AndesTextField
 - AndesTextArea
 - Public enums support string conversion (Swift only)
+- Added icons to LocalIcons: [#49](https://github.com/mercadolibre/fury_andesui-ios/pull/49#issue-407571410)
 
 ## Optimized
 - internal factories don't store anything.
